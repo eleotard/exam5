@@ -5,15 +5,15 @@
 #include "ATarget.hpp"
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"
+#include "SpellBook.hpp"
+#include <map>
+#include "Polymorph.hpp"
 #include "BrickWall.hpp"
 #include "Fireball.hpp"
-#include "Polymorph.hpp"
-#include "SpellBook.hpp"
 #include "TargetGenerator.hpp"
-#include <map>
 
 class ASpell;
-class ATarget; 
+class ATarget;
 class SpellBook;
 
 class Warlock {
@@ -26,8 +26,8 @@ class Warlock {
 
 		void introduce() const;
 		void	learnSpell(ASpell *spell);
-		void	forgetSpell(std::string sp);
-		void	launchSpell(std::string sp, ATarget const& target);
+		void	forgetSpell(std::string const& sp);
+		void	launchSpell(std::string const& sp, ATarget const& target);
 
 		
 	private:
@@ -36,6 +36,5 @@ class Warlock {
 		Warlock &operator=(Warlock const& src);
 		std::string _name;
 		std::string _title; 
-
-		SpellBook *_SB;
+		SpellBook _SB;
 };

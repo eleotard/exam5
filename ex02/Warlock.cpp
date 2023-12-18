@@ -1,12 +1,11 @@
 #include "Warlock.hpp"
 
 Warlock::Warlock() {
-	//_SB = new SpellBook();
+	
 }
 
 Warlock::~Warlock() {
 	std::cout << this->_name <<  ": My job here is done!" << std::endl;
-	//delete _SB;
 }
 
 Warlock::Warlock(Warlock const& src) {
@@ -18,6 +17,7 @@ Warlock::Warlock(std::string const& name, std::string const& title) : _name(name
 }
 
 Warlock &Warlock::operator=(Warlock const& src) {
+	
 	_name = src._name;
 	_title = src._title;
 	return (*this);
@@ -41,18 +41,20 @@ void Warlock::introduce() const {
 }
 
 void	Warlock::learnSpell(ASpell *spell) {
-	if (spell) {
-		_SB->learnSpell(spell);
+	if (spell){
+		_SB.learnSpell(spell);
 	}
 }
 
-void	Warlock::forgetSpell(std::string sp) {
-	_SB->forgetSpell(sp);
+void	Warlock::forgetSpell(std::string const& sp) {
+	_SB.forgetSpell(sp);
 }
 
-void	Warlock::launchSpell(std::string sp, ATarget const& target) {
-	ASpell *spell = _SB->createSpell(sp);
-	if (spell) {
-		spell->launch(target);
+
+void	Warlock::launchSpell(std::string const& sp, ATarget const& target) {
+	ASpell *tmp = NULL;
+	tmp = _SB.createSpell(sp);
+	if (tmp) {
+		tmp->launch(target);
 	}
 }

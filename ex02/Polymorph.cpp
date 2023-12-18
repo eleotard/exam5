@@ -9,8 +9,6 @@ Polymorph::~Polymorph() {
 
 
 ASpell *Polymorph::clone() const {
-	
-	std::cout << "testttt" << std::endl;
 	return (new Polymorph());
 }
 

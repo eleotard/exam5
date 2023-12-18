@@ -5,27 +5,23 @@
 #include "ATarget.hpp"
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"
-#include "Polymorph.hpp"
 #include <map>
 
 class ASpell;
-class ATarget;
-class Fwoosh;
-class Polymorph;
-
+class ATarget; 
 
 class SpellBook {
 	public:
 		SpellBook();
 		~SpellBook();
+
 		void	learnSpell(ASpell *spell);
-		void	forgetSpell(std::string sp);
-		ASpell	*createSpell(std::string sp);
+		void	forgetSpell(std::string const& sp);
+		ASpell	*createSpell(std::string const& sp);
 
 		
 	private:
 		SpellBook(SpellBook const& src);
 		SpellBook &operator=(SpellBook const& src);
-		std::map < std::string, ASpell *> _spellbook;
-
+		std::map<std::string, ASpell *> _spellbook;
 };

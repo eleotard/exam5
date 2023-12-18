@@ -9,7 +9,6 @@ Fireball::~Fireball() {
 
 
 ASpell *Fireball::clone() const {
-	ASpell *fb = new Fireball();
-	return (fb);
+	return (new Fireball());
 }
 

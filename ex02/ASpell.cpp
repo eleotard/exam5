@@ -18,7 +18,8 @@ ASpell::ASpell(std::string const& name, std::string const& effects) : _name(name
 
 ASpell &ASpell::operator=(ASpell const& src) {
 	_name = src._name;
-	_effects = src._effects;
+	_effects = src._effects; 
+	
 	return (*this);
 }
 
